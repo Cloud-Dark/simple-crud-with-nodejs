@@ -37,7 +37,8 @@ app.get("/", (req, res) => {
 });
 
 // tambahkan list_task route ke dalam aplikasi
-app.use("/api/list_tasks", list_taskRoute);
+app.use("/api/tugas", list_taskRoute);
+app.use("/tugas", list_taskRoute);
 
 app.listen(port, () => {
 	logger.info("Server running on port %d", port);
