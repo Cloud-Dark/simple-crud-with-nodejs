@@ -9,7 +9,7 @@ const { createBookValidation } = require("../middlewares/validation.middleware")
 router.post("/",createBookValidation, create)
 router.get("/", all)
 router.get("/:id", find)
-router.put("/:id", update)
+router.patch("/:id", update)
 router.delete("/:id", destroy)
 
 module.exports = router
