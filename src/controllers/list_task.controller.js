@@ -23,7 +23,7 @@ exports.all = async (req, res) => {
 		return response(res, 200, true, "Berhasil Ambil Data", list_tasks);
 	} catch (error) {
 		console.error(error);
-		return response(res, 500, true, "Ambil Data Gagal", error);
+		return response(res, 500, false, "Ambil Data Gagal", error);
 	}
 };
 
@@ -58,10 +58,10 @@ exports.update = async (req, res) => {
 		});
 
 		if (!updated[0]) {
-			return response(res, 200, false, "Gagal Memperbarui data");
+			return response(res, 500, false, "Gagal Memperbarui data");
 		}
 
-		return response(res, 200, false, "Pembaruan Data Berhasil");
+		return response(res, 200, true, "Pembaruan Data Berhasil");
 	} catch (error) {
 		return response(res, 500, false, "Ambil Data Gagal", error);
 	}
@@ -81,7 +81,7 @@ exports.destroy = async (req, res) => {
 			return response(res, 404, false, "Hapus Data Gagal");
 		}
 
-		return response(res, 200, false, "Data Berhasil di hapus");
+		return response(res, 200, true, "Data Berhasil di hapus");
 	} catch (error) {
 		return response(res, 500, false, "Hapus Data Gagal", error);
 	}
