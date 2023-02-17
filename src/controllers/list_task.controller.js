@@ -1,4 +1,5 @@
 const List_task = require("../models/list_task.model")
+const { response } = require("../middlewares/response.middleware");
 
 exports.create = async (req, res) => {
     try {
@@ -10,48 +11,20 @@ exports.create = async (req, res) => {
             selesai
         })
 
-        return res.status(201).json({
-            status: 201,
-            success: true,
-            message: "new list_task created",
-            data: {
-                list_task: list_task,
-            },
-            error: null
-        })
+
+        return  response(res, 200, false, 'Penambahan Data Berhasil');
     } catch (error) {
-        console.error(error)
-        return res.status(500).json({
-            status: 500,
-            success: false,
-            message: "internal server error",
-            data: null,
-            error: error
-        })
+        return  response(res, 500, false, 'Ambil Data Gagal', error);
     }
 }
 
 exports.all = async (req, res) => {
     try {
         const list_tasks = await List_task.findAll()
-        return res.status(200).json({
-            status: 200,
-            success: true,
-            message: "ok",
-            data: {
-                List_task,
-            },
-            error: null
-        })
+        return  response(res, 200, true, 'Berhasil Ambil Data', list_tasks);
     } catch (error) {
         console.error(error)
-        return res.status(500).json({
-            status: 500,
-            success: false,
-            message: "internal server error",
-            data: null,
-            error: error
-        })
+        return  response(res, 500, true, 'Ambil Data Gagal', error);
     }
 }
 
@@ -65,33 +38,13 @@ exports.find = async (req, res) => {
         })
 
         if (!list_task) {
-            return res.status(404).json({
-                status: 404,
-                success: false,
-                message: "list_task not found",
-                data: null,
-                error: "list_task Not Found"
-            })
+            return  response(res, 404, false, 'Id Tidak Di temukan');
         }
 
-        return res.status(200).json({
-            status: 200,
-            success: true,
-            message: "ok",
-            data: {
-                list_task: List_task,
-            },
-            error: null
-        })
+        return  response(res, 200, true, 'ok', list_task);
     } catch (error) {
         console.error(error)
-        return res.status(500).json({
-            status: 500,
-            success: false,
-            message: "internal server error",
-            data: null,
-            error: error
-        })
+        return  response(res, 500, false, 'Ambil Data Gagal', error);
     }
 }
 
@@ -106,32 +59,13 @@ exports.update = async (req, res) => {
         })
 
         if (!updated[0]) {
-            return res.status(200).json({
-                status: 200,
-                success: false,
-                message: "failed to update list_task",
-                data: null,
-                error: "Failed To Update list_task"
-            })
+            return  response(res, 200, false, 'Gagal Memperbarui data');
         }
 
-        return res.status(200).json({
-            status: 200,
-            success: true,
-            message: "list_task updated",
-            data: null,
-            error: null
-        })
+        return  response(res, 200, false, 'Pembaruan Data Berhasil');
 
     } catch (error) {
-        console.error(error)
-        return res.status(500).json({
-            status: 500,
-            success: false,
-            message: "internal server error",
-            data: null,
-            error: error
-        })
+        return  response(res, 500, false, 'Ambil Data Gagal', error);
     }
 }
 
@@ -146,31 +80,12 @@ exports.destroy = async (req, res) => {
         })
 
         if (!destroyed) {
-            return res.status(200).json({
-                status: 200,
-                success: false,
-                message: "failed to delete list_task",
-                data: null,
-                error: "Failed To Delete list_task"
-            })
+            return  response(res, 404, false, 'Hapus Data Gagal');
         }
 
-        return res.status(200).json({
-            status: 200,
-            success: true,
-            message: "list_task deleted",
-            data: null,
-            error: null
-        })
+        return  response(res, 200, false, 'Data Berhasil di hapus');
 
     } catch (error) {
-        console.error(error)
-        return res.status(500).json({
-            status: 500,
-            success: false,
-            message: "internal server error",
-            data: null,
-            error: error
-        })
+        return  response(res, 500, false, 'Hapus Data Gagal', error);
     }
 }
