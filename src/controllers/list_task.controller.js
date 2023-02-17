@@ -1,10 +1,10 @@
-const list_task = require("../models/list_task.model")
+const List_task = require("../models/list_task.model")
 
 exports.create = async (req, res) => {
     try {
         const { judul, deskripsi, selesai } = req.body
 
-        const list_task = await list_task.create({
+        const list_task = await List_task.create({
             judul,
             deskripsi,
             selesai
@@ -33,7 +33,7 @@ exports.create = async (req, res) => {
 
 exports.all = async (req, res) => {
     try {
-        const list_tasks = await list_task.findAll()
+        const list_tasks = await List_task.findAll()
         return res.status(200).json({
             status: 200,
             success: true,
@@ -58,7 +58,7 @@ exports.all = async (req, res) => {
 exports.find = async (req, res) => {
     try {
         const { id } = req.params
-        const list_task = await list_task.findOne({
+        const list_task = await List_task.findOne({
             where: {
                 id: id
             },
@@ -99,7 +99,7 @@ exports.update = async (req, res) => {
     try {
         const { id } = req.params
 
-        const updated = await list_task.update(req.body, {
+        const updated = await List_task.update(req.body, {
             where: {
                 id: id,
             }
@@ -139,7 +139,7 @@ exports.destroy = async (req, res) => {
     try {
         const { id } = req.params
 
-        const destroyed = await list_task.destroy({
+        const destroyed = await List_task.destroy({
             where: {
                 id: id,
             }
