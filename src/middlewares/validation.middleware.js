@@ -1,15 +1,27 @@
-const { response } = require("../middlewares/response.middleware")
-exports.createBookValidation = (req, res, next) => {
-    const { judul, deskripsi, selesai} = req.body
+const { response } = require("../middlewares/response.middleware");
 
-    
-    if (
-        judul === undefined || judul == "" ||
-        deskripsi === undefined || deskripsi == "" ||
-        selesai === undefined || selesai == ""
-        ) {
-        return  response(res, 400, false, 'Please fill out all required input.');
+function checkBool(bool) {
+    if (bool != null) {
+        return (
+            typeof bool === "boolean" ||
+            (typeof bool === "object" &&
+                bool !== null &&
+                typeof bool.valueOf() === "boolean")
+        );
     }
 
-    next()
 }
+
+exports.createBookValidation = (req, res, next) => {
+
+	const { judul, selesai } = req.body;
+
+	if (judul === undefined || judul == "") {
+		return response(res, 400, false, "Judul Wajib Di isi");
+	}
+	if (checkBool(selesai) == false) {
+		return response(res, 501, false, "selesai boleh menampung nilai true dan false");
+	}
+
+	next();
+};

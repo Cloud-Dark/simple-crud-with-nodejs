@@ -5,6 +5,7 @@ const { all, find, create, update, destroy } = require("../controllers/list_task
 const { createBookValidation } = require("../middlewares/validation.middleware")
 
 
+
 router.post("/",createBookValidation, create)
 router.get("/", all)
 router.get("/:id", find)

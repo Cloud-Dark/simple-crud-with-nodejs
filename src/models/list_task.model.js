@@ -9,11 +9,12 @@ const list_task = database.define("list_task", {
     },
     deskripsi: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
     selesai: {
         type: DataTypes.BOOLEAN,
-        allowNull: false
+        allowNull: false,
+        defaultValue: false
     }
 })
 
