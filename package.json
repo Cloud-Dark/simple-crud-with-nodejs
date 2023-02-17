@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Cloud-Dark/simple-crud-with-nodejs#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-pino-logger": "^7.0.0",
+    "express-validator": "^6.15.0",
     "mysql2": "^3.1.2",
     "pino": "^8.10.0",
     "sequelize": "^6.28.0"

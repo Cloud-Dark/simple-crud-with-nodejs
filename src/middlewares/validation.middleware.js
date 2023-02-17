@@ -1,7 +1,12 @@
 exports.createBookValidation = (req, res, next) => {
     const { judul, deskripsi, selesai} = req.body
 
-    if (judul === undefined || judul == "") {
+    
+    if (
+        judul === undefined || judul == "" ||
+        deskripsi === undefined || deskripsi == "" ||
+        selesai === undefined || selesai == ""
+        ) {
         return res.status(400).json({
             status: 400,
             success: false,
@@ -9,32 +14,9 @@ exports.createBookValidation = (req, res, next) => {
             data: {
                 original: req.body
             },
-            error: "judul field is required"
+            error: "Please fill out all required input."
         })
     }
 
-    if (deskripsi === undefined || deskripsi == "") {
-        return res.status(400).json({
-            status: 400,
-            success: false,
-            message: "bad request",
-            data: {
-                original: req.body
-            },
-            error: "deskripsi field is required"
-        })
-    }
-
-    if (selesai === undefined || selesai == "") {
-        return res.status(400).json({
-            status: 400,
-            success: false,
-            message: "bad request",
-            data: {
-                original: req.body
-            },
-            error: "selesai field is required"
-        })
-    }
     next()
 }

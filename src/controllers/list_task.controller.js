@@ -39,7 +39,7 @@ exports.all = async (req, res) => {
             success: true,
             message: "ok",
             data: {
-                list_tasks,
+                List_task,
             },
             error: null
         })
@@ -79,7 +79,7 @@ exports.find = async (req, res) => {
             success: true,
             message: "ok",
             data: {
-                list_task: list_task,
+                list_task: List_task,
             },
             error: null
         })
