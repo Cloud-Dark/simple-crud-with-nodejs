@@ -10,7 +10,6 @@ exports.create =
 				deskripsi,
 				selesai,
 			});
-
 			return response(res, 200, true, "Penambahan Data Berhasil", list_task);
 		} catch (error) {
 			return response(res, 500, false, "Penambahan Data Gagal.", error);

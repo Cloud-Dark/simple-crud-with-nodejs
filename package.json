@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Cloud-Dark/simple-crud-with-nodejs#readme",
   "dependencies": {
+    "@sentry/node": "^7.38.0",
+    "@sentry/tracing": "^7.38.0",
+    "@serverless/cloud": "^2.11.8",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-pino-logger": "^7.0.0",
