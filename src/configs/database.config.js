@@ -1,7 +1,8 @@
+require('dotenv').config();
 module.exports = {
-    HOST: "localhost",
-    USER: "root",
-    PASSWORD: "root",
-    DB: "simplecurd-nodejs",
-    DIALECT: "mysql",
+    HOST: process.env.HOST,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DB: process.env.DB,
+    DIALECT: process.env.ENGINE,
 }

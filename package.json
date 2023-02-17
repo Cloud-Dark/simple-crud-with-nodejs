@@ -22,6 +22,7 @@
     "@sentry/tracing": "^7.38.0",
     "@serverless/cloud": "^2.11.8",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-pino-logger": "^7.0.0",
     "express-validator": "^6.15.0",
