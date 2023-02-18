@@ -35,12 +35,12 @@ exports.find = async (req, res) => {
 		});
 
 		if (!list_task) {
-			return response(res, 404, false, "Id Tidak Di temukan");
+			return response(res, 500, false, "Gagal Memperbarui data");
 		}
 
-		return response(res, 200, true, "ok", list_task);
+		return response(res, 200, true, "Pembaruan Data Berhasil")
 	} catch (error) {
-		return response(res, 500, false, "Ambil Data Gagal", error);
+		return response(res, 500, false, "Ambil Data Gagal", error)
 	}
 };
 
