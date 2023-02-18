@@ -21,7 +21,6 @@ exports.all = async (req, res) => {
 		const list_tasks = await List_task.findAll();
 		return response(res, 200, true, "Berhasil Ambil Data", list_tasks);
 	} catch (error) {
-		console.error(error);
 		return response(res, 500, false, "Ambil Data Gagal", error);
 	}
 };
@@ -41,7 +40,6 @@ exports.find = async (req, res) => {
 
 		return response(res, 200, true, "ok", list_task);
 	} catch (error) {
-		console.error(error);
 		return response(res, 500, false, "Ambil Data Gagal", error);
 	}
 };
