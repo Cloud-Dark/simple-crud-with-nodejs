@@ -25,10 +25,15 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-pino-logger": "^7.0.0",
+    "express-rate-limit": "^6.7.0",
     "express-validator": "^6.15.0",
+    "express-winston": "^4.2.0",
+    "helmet": "^6.0.1",
     "mysql2": "^3.1.2",
     "pino": "^8.10.0",
-    "sequelize": "^6.28.0"
+    "response-time": "^2.3.2",
+    "sequelize": "^6.28.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "pino-pretty": "^9.2.0"

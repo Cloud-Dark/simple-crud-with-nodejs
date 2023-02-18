@@ -4,15 +4,20 @@ const pino = require("pino");
 const pretty = require("pino-pretty");
 var expressPino = require("express-pino-logger");
 const { response } = require("./middlewares/response.middleware");
+const rateLimit = require("express-rate-limit");
 const stream = pretty({
 	colorize: true,
 });
 const api = require("@serverless/cloud");
 const Sentry = require("@sentry/node");
 const Tracing = require("@sentry/tracing");
-
+const winston = require("winston");
+const expressWinston = require("express-winston");
+const responseTime = require("response-time");
+const helmet = require("helmet");
 const logger = pino({ level: process.env.LOG_LEVEL || "info" }, stream);
 var cors = require("cors");
+
 const expressLogger = expressPino({ logger });
 
 const app = express();
@@ -48,8 +53,29 @@ app.use(expressLogger);
 app.use(Sentry.Handlers.requestHandler());
 // TracingHandler creates a trace for every incoming request
 app.use(Sentry.Handlers.tracingHandler());
-
+app.use(
+	rateLimit({
+		windowMs: 15 * 60 * 1000, // 15 minutes
+		max: 1000, // 5 calls
+	})
+);
+app.use(helmet());
 app.use(cors());
+app.use(responseTime());
+
+app.use(
+	expressWinston.logger({
+		transports: [new winston.transports.Console()],
+		format: winston.format.json(),
+		statusLevels: true,
+		meta: false,
+		msg: "HTTP {{req.method}} {{req.url}} {{res.statusCode}} {{res.responseTime}}ms",
+		expressFormat: true,
+		ignoreRoute() {
+			return false;
+		},
+	})
+);
 // import model
 const database = require("./database");
 
