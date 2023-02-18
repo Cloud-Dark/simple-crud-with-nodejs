@@ -1,41 +1,42 @@
 const express = require("express");
 const list_taskRoute = require("./routes/list_task.route");
 const pino = require("pino");
-const pretty = require('pino-pretty')
-var expressPino = require('express-pino-logger')
+const pretty = require("pino-pretty");
+var expressPino = require("express-pino-logger");
+const { response } = require("../middlewares/response.middleware");
 const stream = pretty({
-	colorize: true
-  })
-const logger = pino({ level: process.env.LOG_LEVEL || "info" },stream);
-var cors = require('cors');
+	colorize: true,
+});
+const api = require("@serverless/cloud");
+const Sentry = require("@sentry/node");
+const Tracing = require("@sentry/tracing");
+
+const logger = pino({ level: process.env.LOG_LEVEL || "info" }, stream);
+var cors = require("cors");
 const expressLogger = expressPino({ logger });
 
 const app = express();
 // or using CommonJS
-const api = require("@serverless/cloud");
-const Sentry = require('@sentry/node');
-const Tracing = require("@sentry/tracing");
 
 Sentry.init({
-  dsn: "https://adfbdc578dda4eaea689f953dc319db9@o4504696352145408.ingest.sentry.io/4504696444289024",
-  // or pull from params
-//   dsn: params.SENTRY_DSN,
-//   environment: params.INSTANCE_NAME,
-  integrations: [
-    // enable HTTP calls tracing
-    new Sentry.Integrations.Http({ tracing: true }),
-    // enable Express.js middleware tracing
-    new Tracing.Integrations.Express({ app }),
-  ],
+	dsn: "https://adfbdc578dda4eaea689f953dc319db9@o4504696352145408.ingest.sentry.io/4504696444289024",
+	// or pull from params
+	//   dsn: params.SENTRY_DSN,
+	//   environment: params.INSTANCE_NAME,
+	integrations: [
+		// enable HTTP calls tracing
+		new Sentry.Integrations.Http({ tracing: true }),
+		// enable Express.js middleware tracing
+		new Tracing.Integrations.Express({ app }),
+	],
 
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 1.0,
-  // or pull from params
-  // tracesSampleRate: parseFloat(params.SENTRY_TRACES_SAMPLE_RATE),
+	// Set tracesSampleRate to 1.0 to capture 100%
+	// of transactions for performance monitoring.
+	// We recommend adjusting this value in production
+	tracesSampleRate: 1.0,
+	// or pull from params
+	// tracesSampleRate: parseFloat(params.SENTRY_TRACES_SAMPLE_RATE),
 });
-
 
 const port = process.env.PORT || 3000;
 
