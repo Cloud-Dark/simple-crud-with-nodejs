@@ -1,0 +1,1352 @@
+{
+	"info": {
+		"_postman_id": "1fd5e393-e06c-4215-bc9f-db43ebb72ce2",
+		"name": "Simple CRUD with Node JS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18997431"
+	},
+	"item": [
+		{
+			"name": "Endpoint Starter Cheker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sukses",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}",
+							"host": [
+								"{{base_url}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e-U2fk2lEIRjcQ6IUKDjzAag4ODWA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:01:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Aplikasi Simple Rest API Siap Digunakan\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Ambil Semua Tugas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tugas/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tugas",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Ambil Semua list Tugas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tugas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "990"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:18:17 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676690970"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1237"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4d5-vKm9MM9G9GoZvJ9jujK2XekBTm4\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "19.128ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Berhasil Ambil Data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": 3,\n            \"createdAt\": \"2023-02-17T15:03:29.000Z\",\n            \"updatedAt\": \"2023-02-17T15:03:29.000Z\"\n        },\n        {\n            \"id\": 2,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": 3,\n            \"createdAt\": \"2023-02-17T15:08:51.000Z\",\n            \"updatedAt\": \"2023-02-17T15:08:51.000Z\"\n        },\n        {\n            \"id\": 3,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": true,\n            \"createdAt\": \"2023-02-17T15:25:37.000Z\",\n            \"updatedAt\": \"2023-02-17T15:25:37.000Z\"\n        },\n        {\n            \"id\": 4,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": false,\n            \"createdAt\": \"2023-02-17T15:25:40.000Z\",\n            \"updatedAt\": \"2023-02-17T15:25:40.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": false,\n            \"createdAt\": \"2023-02-17T15:32:47.000Z\",\n            \"updatedAt\": \"2023-02-17T15:32:47.000Z\"\n        },\n        {\n            \"id\": 6,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": true,\n            \"createdAt\": \"2023-02-17T15:33:07.000Z\",\n            \"updatedAt\": \"2023-02-17T15:33:07.000Z\"\n        },\n        {\n            \"id\": 7,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": true,\n            \"createdAt\": \"2023-02-17T15:39:34.000Z\",\n            \"updatedAt\": \"2023-02-17T15:39:34.000Z\"\n        },\n        {\n            \"id\": 8,\n            \"judul\": \"test 4ttbyjoykv4lt\",\n            \"deskripsi\": null,\n            \"selesai\": true,\n            \"createdAt\": \"2023-02-17T15:40:34.000Z\",\n            \"updatedAt\": \"2023-02-17T15:40:34.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Ambil Data dari ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tugas/100",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tugas",
+						"100"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sukses",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tugas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "992"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:16:45 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676690970"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7-t8xodjsPP5AifaFlhzgId5BzFzg\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "5.109ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"ok\",\n    \"data\": {\n        \"id\": 1,\n        \"judul\": \"test 4ttbyjoykv4lt\",\n        \"deskripsi\": null,\n        \"selesai\": 3,\n        \"createdAt\": \"2023-02-17T15:03:29.000Z\",\n        \"updatedAt\": \"2023-02-17T15:03:29.000Z\"\n    }\n}"
+				},
+				{
+					"name": "Tidak di temukan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tugas/100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								"100"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "991"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:17:18 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676690970"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-sxD3qwNfg854sSkC3akbJ4C2Txg\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "13.610ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Id Tidak Di temukan\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Menambahkan Tugas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"judul\" : \"test judul tugas\",\r\n    \"deskripsi\" : \"test deskripsi tugas\",\r\n    \"selesai\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tugas/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tugas",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Berhasil menambahkan data",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\" : \"test judul tugas\",\r\n    \"deskripsi\" : \"test deskripsi tugas\",\r\n    \"selesai\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tugas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "989"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:21:45 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676690970"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e1-h5034bzwxtLKWvtZoLyzg2r/4aM\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "55.203ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Penambahan Data Berhasil\",\n    \"data\": {\n        \"id\": 11,\n        \"judul\": \"test judul tugas\",\n        \"deskripsi\": \"test deskripsi tugas\",\n        \"selesai\": true,\n        \"updatedAt\": \"2023-02-18T03:21:45.298Z\",\n        \"createdAt\": \"2023-02-18T03:21:45.298Z\"\n    }\n}"
+				},
+				{
+					"name": "Gagal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/tugas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "999"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:26:55 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676691711"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-5cm1U+3Bg+G7vAxsjgq65gBHJU8\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "3.348ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Judul Wajib Di isi\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Data Tugas",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tugas/5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tugas",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Berhasil",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tugas/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "996"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:41:13 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676692561"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-6p2DE8SIoSVXLt4G4HbuR9O5iGo\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "13.455ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Pembaruan Data Berhasil\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "Gagal",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/tugas/100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"tugas",
+								"100"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "995"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:42:59 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676692561"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "62"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3e-TdZf18qOIzl99JYL+8AJLs/4M08\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "24.688ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Gagal Memperbarui data\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Data Tugas Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/tugas/5",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tugas",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Berhasil",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tugas/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "993"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:45:38 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676692561"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d-FdBKIWdLue4DuG9TzpXBLD3RdMY\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "23.661ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Data Berhasil di hapus\",\n    \"data\": {}\n}"
+				},
+				{
+					"name": "Gagal",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\": \"test judul tugas\",\r\n    \"deskripsi\": \"test judul tugas\",\r\n    \"selesai\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/tugas/50",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"tugas",
+								"50"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "992"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 03:46:26 GMT"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1676692561"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Embedder-Policy",
+							"value": "require-corp"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-rjf/oWQ+LYDK59kmb7aQxn/qMTA\""
+						},
+						{
+							"key": "X-Response-Time",
+							"value": "14.590ms"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"message\": \"Hapus Data Gagal\",\n    \"data\": {}\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}
