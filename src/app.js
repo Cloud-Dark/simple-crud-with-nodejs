@@ -3,7 +3,7 @@ const list_taskRoute = require("./routes/list_task.route");
 const pino = require("pino");
 const pretty = require("pino-pretty");
 var expressPino = require("express-pino-logger");
-const { response } = require("../middlewares/response.middleware");
+const { response } = require("./middlewares/response.middleware");
 const stream = pretty({
 	colorize: true,
 });
