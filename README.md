@@ -13,9 +13,9 @@ Aplikasi CRUD sederhana menggunakan node js
 
 
 ## Credit :heart: :wave:
-[![GitHub Stars](https://img.shields.io/github/stars/cefjoeii/mern-crud.svg?style=social&label=Star)](https://github.com/cefjoeii/mern-crud)
-[![GitHub Forks](https://img.shields.io/github/forks/cefjoeii/mern-crud.svg?style=social&label=Fork)](https://github.com/cefjoeii/mern-crud/fork)
-[![GitHub Watchers](https://img.shields.io/github/watchers/cefjoeii/mern-crud.svg?style=social&label=Watch)](https://github.com/cefjoeii/mern-crud)
+[![GitHub Stars](https://img.shields.io/github/stars/Cloud-Dark/simple-crud-with-nodejs.svg?style=social&label=Star)](https://github.com/cefjoeii/mern-crud)
+[![GitHub Forks](https://img.shields.io/github/forks/Cloud-Dark/simple-crud-with-nodejs.svg?style=social&label=Fork)](https://github.com/cefjoeii/mern-crud/fork)
+[![GitHub Watchers](https://img.shields.io/github/watchers/Cloud-Dark/simple-crud-with-nodejs.svg?style=social&label=Watch)](https://github.com/cefjoeii/mern-crud)
 
 [![Follow on GitHub](https://img.shields.io/github/followers/Cloud-Dark.svg?style=social&label=Follow)](https://github.com/Cloud-Dark)
 [![Follow on Facebook](https://img.shields.io/badge/Follow%20%40syahdandev%20on-Facebook-%233C5A99.svg)](https://www.facebook.com/massyahdanfilsafan)
